@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.memobox.controller.StatsController"
+      styleClass="view-container" spacing="22">
+
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
+    <padding><Insets top="28" right="32" bottom="28" left="32"/></padding>
+
+    <!-- ══ CABECERA ═══════════════════════════════════════════════════════ -->
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <VBox HBox.hgrow="ALWAYS">
+            <Label text="📊 Estadísticas" styleClass="page-title"/>
+            <Label text="Tu progreso global de aprendizaje" styleClass="page-subtitle"/>
+        </VBox>
+        <Button text="🔄 Actualizar" onAction="#onRefresh" styleClass="btn-secondary"/>
+    </HBox>
+
+    <!-- ══ RACHA ══════════════════════════════════════════════════════════ -->
+    <VBox styleClass="card-panel, streak-panel" spacing="10">
+        <Label text="🔥 Racha de estudio" styleClass="section-title"/>
+        <HBox spacing="40">
+            <VBox spacing="4">
+                <Label text="Racha actual" styleClass="stat-label"/>
+                <Label fx:id="lblRachaActual" text="— 🔥" styleClass="stat-value-xl"/>
+            </VBox>
+            <VBox spacing="4">
+                <Label text="Mejor racha" styleClass="stat-label"/>
+                <Label fx:id="lblRachaMejor" text="—" styleClass="stat-value-lg"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+    <!-- ══ ESTADÍSTICAS GENERALES ════════════════════════════════════════ -->
+    <HBox spacing="16">
+        <VBox styleClass="stat-card" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Estudiadas hoy" styleClass="stat-label"/>
+            <Label fx:id="lblEstudiadasHoy" text="—" styleClass="stat-value-lg"/>
+        </VBox>
+        <VBox styleClass="stat-card, stat-due" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Pendientes hoy" styleClass="stat-label"/>
+            <Label fx:id="lblPendientesHoy" text="—" styleClass="stat-value-lg"/>
+        </VBox>
+        <VBox styleClass="stat-card" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Total tarjetas" styleClass="stat-label"/>
+            <Label fx:id="lblTotalTarjetas" text="—" styleClass="stat-value-lg"/>
+        </VBox>
+        <VBox styleClass="stat-card, stat-streak" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Dominadas" styleClass="stat-label"/>
+            <Label fx:id="lblDominadas" text="—" styleClass="stat-value-lg"/>
+        </VBox>
+    </HBox>
+
+    <!-- ══ PROGRESO DE DOMINIO ════════════════════════════════════════════ -->
+    <VBox styleClass="card-panel" spacing="10">
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Progreso de dominio global" styleClass="section-title" HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblProgressPct" text="0% dominado" styleClass="stat-hint"/>
+        </HBox>
+        <ProgressBar fx:id="progressDominio" progress="0" maxWidth="Infinity" styleClass="progress-mastery"/>
+    </VBox>
+
+    <!-- ══ TOTALES ════════════════════════════════════════════════════════ -->
+    <VBox styleClass="card-panel" spacing="14">
+        <Label text="Totales históricos" styleClass="section-title"/>
+        <HBox spacing="40">
+            <VBox spacing="4">
+                <Label text="Total revisiones" styleClass="stat-label"/>
+                <Label fx:id="lblTotalRevisiones" text="—" styleClass="stat-value-lg"/>
+            </VBox>
+            <VBox spacing="4">
+                <Label text="Correctas ✅" styleClass="stat-label"/>
+                <Label fx:id="lblCorrectas" text="—" styleClass="stat-value-lg"/>
+            </VBox>
+            <VBox spacing="4">
+                <Label text="Incorrectas ❌" styleClass="stat-label"/>
+                <Label fx:id="lblIncorrectas" text="—" styleClass="stat-value-lg"/>
+            </VBox>
+            <VBox spacing="4">
+                <Label text="Precisión" styleClass="stat-label"/>
+                <Label fx:id="lblPrecision" text="—" styleClass="stat-value-lg"/>
+            </VBox>
+        </HBox>
+    </VBox>
+
+</VBox>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.example.memobox.controller.StudyController"
+           styleClass="study-root">
+
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
+
+    <!-- ZONA DE ESTUDIO -->
+    <VBox fx:id="studyPane" styleClass="study-container" spacing="20" alignment="TOP_CENTER">
+        <padding><Insets top="24" right="40" bottom="24" left="40"/></padding>
+
+        <!-- Cabecera -->
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <Button text="Volver" onAction="#onVolver" styleClass="btn-ghost"/>
+            <VBox HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label fx:id="lblDeckName" text="Mazo" styleClass="study-deck-name"/>
+                <Label fx:id="lblProgress" text="1 / 10" styleClass="study-progress-label"/>
+            </VBox>
+        </HBox>
+
+        <!-- Barra de progreso -->
+        <ProgressBar fx:id="progressBar" progress="0" maxWidth="Infinity" styleClass="progress-study"/>
+
+        <!-- TARJETA -->
+        <VBox styleClass="study-card" spacing="20" alignment="CENTER" VBox.vgrow="ALWAYS">
+            <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+            <Label text="PREGUNTA" styleClass="card-section-label"/>
+            <Label fx:id="lblQuestion" text="..." styleClass="card-question-text" wrapText="true" alignment="CENTER"/>
+
+            <!-- Respuesta oculta -->
+            <VBox fx:id="answerPane" spacing="12" alignment="CENTER" visible="false" managed="false">
+                <Separator styleClass="card-divider"/>
+                <Label text="RESPUESTA" styleClass="card-section-label"/>
+                <Label fx:id="lblAnswer"  text="" styleClass="card-answer-text"  wrapText="true" alignment="CENTER"/>
+                <Label fx:id="lblExample" text="" styleClass="card-example-text" wrapText="true" alignment="CENTER"/>
+            </VBox>
+        </VBox>
+
+        <!-- BOTONES -->
+        <VBox spacing="12" alignment="CENTER">
+            <Button fx:id="btnReveal" text="Mostrar respuesta"
+                    onAction="#onReveal" styleClass="btn-reveal" prefWidth="260"/>
+
+            <HBox fx:id="ratingPanel" spacing="10" alignment="CENTER"
+                  visible="false" managed="false">
+                <Button text="Otra vez"  onAction="#onAgain" styleClass="btn-again"  prefWidth="120"/>
+                <Button text="Dificil"   onAction="#onHard"  styleClass="btn-hard"   prefWidth="120"/>
+                <Button text="Bien"      onAction="#onGood"  styleClass="btn-good"   prefWidth="120"/>
+                <Button text="Facil"     onAction="#onEasy"  styleClass="btn-easy"   prefWidth="120"/>
+            </HBox>
+        </VBox>
+    </VBox>
+
+    <!-- PANTALLA FINALIZADO -->
+    <VBox fx:id="finishedPane" styleClass="finished-pane" alignment="CENTER" spacing="24"
+          visible="false" managed="false">
+        <padding><Insets top="60" right="80" bottom="60" left="80"/></padding>
+
+        <Label text="Sesion completada" styleClass="finished-title"/>
+        <Label fx:id="lblFinResult" text="" styleClass="finished-result" wrapText="true" alignment="CENTER"/>
+
+        <HBox spacing="16" alignment="CENTER">
+            <Button text="Ir al inicio"  onAction="#onVolverDashboard" styleClass="btn-primary"   prefWidth="180"/>
+            <Button text="Ver mis mazos" onAction="#onVolver"          styleClass="btn-secondary" prefWidth="160"/>
+        </HBox>
+    </VBox>
+
+</StackPane>

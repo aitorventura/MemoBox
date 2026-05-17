@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.memobox.controller.DashboardController"
+      styleClass="view-container" spacing="24">
+
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
+    <padding><Insets top="32" right="32" bottom="32" left="32"/></padding>
+
+    <!-- CABECERA -->
+    <VBox spacing="4">
+        <Label text="Panel de inicio" styleClass="page-title"/>
+        <Label text="Resumen de tu progreso" styleClass="page-subtitle"/>
+    </VBox>
+
+    <!-- ESTADISTICAS -->
+    <HBox spacing="16">
+        <VBox styleClass="stat-card, stat-streak" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Racha actual" styleClass="stat-label"/>
+            <Label fx:id="lblStreakCurrent" text="0" styleClass="stat-value-lg"/>
+            <Label fx:id="lblStreakBest" text="Mejor: 0" styleClass="stat-hint"/>
+        </VBox>
+
+        <VBox styleClass="stat-card, stat-due" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Pendientes hoy" styleClass="stat-label"/>
+            <Label fx:id="lblDueToday" text="0" styleClass="stat-value-lg"/>
+            <Label text="Tarjetas a revisar" styleClass="stat-hint"/>
+        </VBox>
+
+        <VBox styleClass="stat-card" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Estudiadas hoy" styleClass="stat-label"/>
+            <Label fx:id="lblStudiedToday" text="0" styleClass="stat-value-lg"/>
+            <Label fx:id="lblAccuracy" text="Precision: --" styleClass="stat-hint"/>
+        </VBox>
+
+        <VBox styleClass="stat-card" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Mazos" styleClass="stat-label"/>
+            <Label fx:id="lblTotalDecks" text="0" styleClass="stat-value-lg"/>
+            <Label fx:id="lblMastered" text="Dominadas: 0" styleClass="stat-hint"/>
+        </VBox>
+    </HBox>
+
+    <!-- PROGRESO GLOBAL -->
+    <VBox styleClass="card-panel" spacing="10">
+        <Label text="Progreso de dominio" styleClass="section-title"/>
+        <ProgressBar fx:id="progressMastery" progress="0" maxWidth="Infinity" styleClass="progress-mastery"/>
+    </VBox>
+
+    <!-- ACCIONES -->
+    <VBox styleClass="card-panel" spacing="12">
+        <Label text="Acciones" styleClass="section-title"/>
+        <HBox spacing="12">
+            <Button text="Estudiar ahora"  onAction="#onStudyAll"  styleClass="btn-primary"   prefWidth="160"/>
+            <Button text="Ver mis mazos"   onAction="#onGoDecks"   styleClass="btn-secondary" prefWidth="160"/>
+            <Button text="Estadisticas"    onAction="#onGoStats"   styleClass="btn-secondary" prefWidth="160"/>
+        </HBox>
+    </VBox>
+
+</VBox>

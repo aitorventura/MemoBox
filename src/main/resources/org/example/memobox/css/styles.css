@@ -1,0 +1,430 @@
+/* Variables globales */
+.root,
+.root-pane,
+.view-container,
+.study-root {
+    -mb-primary: #3498db;
+    -mb-primary-dark: #2980b9;
+    -mb-secondary: #ecf0f1;
+    -mb-secondary-dark: #bdc3c7;
+    -mb-danger: #e74c3c;
+    -mb-success: #27ae60;
+    -mb-warning: #f39c12;
+
+    -mb-bg-light: #f4f7f6;
+    -mb-card-bg: #ffffff;
+    -mb-text-main: #2c3e50;
+    -mb-text-muted: #95a5a6;
+    -mb-border-color: #dcdde1;
+
+    -fx-font-family: "Segoe UI", "Tahoma", sans-serif;
+    -fx-font-size: 13px;
+    -fx-accent: -mb-primary;
+    -fx-focus-color: -mb-primary;
+}
+
+/* Layout */
+.root-pane,
+.content-pane,
+.view-container,
+.study-root,
+.study-container,
+.finished-pane {
+    -fx-background-color: -mb-bg-light;
+}
+
+.root-pane {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 70%, #ffffff 0%, #f0f4f7 100%);
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #2c3e50;
+    -fx-pref-width: 200px;
+}
+
+.sidebar-brand {
+    -fx-padding: 25 15;
+    -fx-background-color: #1a252f;
+    -fx-spacing: 5;
+}
+
+.brand-circle {
+    -fx-background-color: -mb-primary;
+    -fx-background-radius: 500;
+    -fx-min-width: 64;
+    -fx-min-height: 64;
+    -fx-max-width: 64;
+    -fx-max-height: 64;
+    -fx-alignment: CENTER;
+}
+
+.brand-icon-lg {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.brand-icon {
+    -fx-text-fill: white;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+.brand-name-lg {
+    -fx-text-fill: -mb-text-main;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.brand-name {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.brand-sub {
+    -fx-text-fill: #95a5a6;
+    -fx-font-size: 12px;
+}
+
+.sidebar-sep {
+    -fx-background-color: #34495e;
+    -fx-opacity: 0.4;
+}
+
+.nav-section-label {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 20 15 5 15;
+}
+
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #bdc3c7;
+    -fx-padding: 12 15;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+}
+
+.nav-btn:hover {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+}
+
+.nav-active {
+    -fx-background-color: -mb-primary;
+    -fx-text-fill: white;
+}
+
+.sidebar-username {
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 12px;
+    -fx-padding: 10 15 0 15;
+}
+
+.btn-logout {
+    -fx-background-color: transparent;
+    -fx-text-fill: #bdc3c7;
+    -fx-font-size: 13px;
+    -fx-padding: 10 15;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.btn-logout:hover {
+    -fx-background-color: rgba(231, 76, 60, 0.1);
+    -fx-text-fill: -mb-danger;
+    -fx-background-radius: 6;
+}
+
+.sidebar-footer {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 10px;
+    -fx-padding: 10 15;
+}
+
+/* Tipografía */
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -mb-text-main;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -mb-text-muted;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -mb-text-main;
+}
+
+/* Paneles */
+.card-panel,
+.stat-card,
+.login-box,
+.study-card {
+    -fx-background-color: -mb-card-bg;
+    -fx-border-color: -mb-border-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 20, 0, 0, 10);
+}
+
+.stat-card {
+    -fx-padding: 15;
+}
+
+.stat-streak {
+    -fx-border-color: -mb-primary;
+}
+
+.stat-due {
+    -fx-border-color: -mb-warning;
+}
+
+.streak-panel {
+    -fx-border-color: -mb-primary;
+}
+
+.stat-label {
+    -fx-text-fill: -mb-text-muted;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.stat-value-lg {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.stat-value-xl {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -mb-primary;
+}
+
+.stat-hint {
+    -fx-font-size: 11px;
+    -fx-text-fill: -mb-text-muted;
+}
+
+/* Botones */
+.btn-primary {
+    -fx-background-color: -mb-primary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: -mb-primary-dark;
+}
+
+.btn-secondary {
+    -fx-background-color: white;
+    -fx-text-fill: -mb-text-main;
+    -fx-border-color: -mb-border-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: -mb-bg-light;
+}
+
+.btn-danger {
+    -fx-background-color: -mb-danger;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: -mb-primary;
+    -fx-cursor: hand;
+    -fx-padding: 5 10;
+}
+
+.btn-ghost:hover {
+    -fx-background-color: #e8f0f5;
+    -fx-background-radius: 4;
+}
+
+.btn-reveal {
+    -fx-background-color: -mb-primary;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25;
+    -fx-padding: 10 35;
+    -fx-cursor: hand;
+}
+
+.btn-again {
+    -fx-background-color: -mb-danger;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.btn-hard {
+    -fx-background-color: -mb-warning;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.btn-good {
+    -fx-background-color: -mb-success;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.btn-easy {
+    -fx-background-color: -mb-primary;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+/* Barras */
+.progress-mastery .track,
+.progress-study .track {
+    -fx-background-color: -mb-border-color;
+    -fx-background-radius: 10;
+}
+
+.progress-mastery .bar {
+    -fx-background-color: -mb-primary;
+    -fx-background-radius: 10;
+}
+
+.progress-study .bar {
+    -fx-background-color: -mb-success;
+    -fx-background-radius: 10;
+}
+
+/* Formularios */
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: -mb-text-main;
+    -fx-font-size: 13px;
+}
+
+.form-input,
+.form-textarea {
+    -fx-background-color: white;
+    -fx-border-color: -mb-border-color;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 12;
+    -fx-border-width: 1;
+}
+
+.form-input:focused,
+.form-textarea:focused {
+    -fx-border-color: -mb-primary;
+}
+
+.form-error {
+    -fx-text-fill: -mb-danger;
+    -fx-background-color: #fceae9;
+    -fx-padding: 10;
+    -fx-background-radius: 6;
+    -fx-font-size: 11px;
+}
+
+/* Tablas */
+.data-table {
+    -fx-background-color: transparent;
+    -fx-border-color: -mb-border-color;
+    -fx-border-width: 1;
+}
+
+.data-table .column-header {
+    -fx-background-color: #f1f2f6;
+    -fx-padding: 8;
+}
+
+.data-table .column-header .label {
+    -fx-text-fill: -mb-text-main;
+    -fx-font-weight: bold;
+}
+
+.data-table .table-row-cell:odd {
+    -fx-background-color: #fafafa;
+}
+
+.data-table .table-row-cell:selected {
+    -fx-background-color: #e8f0f5;
+}
+
+/* Modo Estudio */
+.study-deck-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.study-progress-label {
+    -fx-text-fill: -mb-text-muted;
+}
+
+.card-section-label {
+    -fx-text-fill: -mb-text-muted;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.card-question-text {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.card-answer-text {
+    -fx-font-size: 18px;
+    -fx-text-fill: -mb-success;
+    -fx-font-weight: bold;
+}
+
+.card-example-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: -mb-text-muted;
+    -fx-font-style: italic;
+}
+
+.card-divider {
+    -fx-opacity: 0.5;
+}
+
+/* Pantalla final */
+.finished-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.finished-result {
+    -fx-font-size: 14px;
+    -fx-line-spacing: 5;
+}
+
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.example.memobox.controller.LoginController"
+           styleClass="root-pane"
+           prefWidth="1100" prefHeight="680">
+
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
+
+    <VBox styleClass="login-box" spacing="18" maxWidth="400" alignment="CENTER">
+        <padding><Insets top="40" right="36" bottom="40" left="36"/></padding>
+
+        <!-- Logo -->
+        <VBox alignment="CENTER" spacing="12">
+            <StackPane styleClass="brand-circle">
+                <Label text="MB" styleClass="brand-icon-lg"/>
+            </StackPane>
+            <VBox alignment="CENTER" spacing="2">
+                <Label text="MemoBox" styleClass="brand-name-lg"/>
+                <Label text="Aprende con tarjetas de memoria" styleClass="brand-sub"/>
+            </VBox>
+        </VBox>
+
+        <!-- Título dinámico (Login / Registro) -->
+        <Label fx:id="lblTitle" text="Iniciar sesión"
+               styleClass="section-title" maxWidth="Infinity"
+               style="-fx-alignment: CENTER; -fx-padding: 10 0 5 0; -fx-font-size: 18px;"/>
+
+        <!-- Label de error -->
+        <Label fx:id="lblError" text="" styleClass="form-error"
+               managed="false" visible="false"
+               maxWidth="Infinity" wrapText="true"/>
+
+        <!-- Campo: usuario -->
+        <VBox spacing="6">
+            <Label text="Usuario" styleClass="form-label"/>
+            <TextField fx:id="txtUsername" promptText="Nombre de usuario"
+                       styleClass="form-input"/>
+        </VBox>
+
+        <!-- Campo: email (solo en registro) -->
+        <VBox fx:id="emailBox" spacing="6" managed="false" visible="false">
+            <Label text="Email" styleClass="form-label"/>
+            <TextField fx:id="txtEmail" promptText="correo@ejemplo.com"
+                       styleClass="form-input"/>
+        </VBox>
+
+        <!-- Campo: contraseña -->
+        <VBox spacing="6">
+            <Label text="Contraseña" styleClass="form-label"/>
+            <PasswordField fx:id="txtPassword" promptText="Tu contraseña"
+                           styleClass="form-input"/>
+        </VBox>
+
+        <!-- Campo: confirmar contraseña (solo en registro) -->
+        <VBox fx:id="confirmBox" spacing="6" managed="false" visible="false">
+            <Label text="Confirmar contraseña" styleClass="form-label"/>
+            <PasswordField fx:id="txtConfirm" promptText="Repite la contraseña"
+                           styleClass="form-input"/>
+        </VBox>
+
+        <!-- Botón principal de acción -->
+        <Button fx:id="btnAction" text="Iniciar sesión"
+                onAction="#onAction"
+                styleClass="btn-primary" maxWidth="Infinity"
+                style="-fx-padding: 12 20 12 20;"/>
+
+        <!-- Toggle login / registro -->
+        <HBox alignment="CENTER" spacing="4">
+            <Label fx:id="lblToggleHint" text="¿No tienes cuenta?"
+                   styleClass="page-subtitle"/>
+            <Button fx:id="btnToggle" text="Crear cuenta"
+                    onAction="#onToggle" styleClass="btn-ghost"/>
+        </HBox>
+
+    </VBox>
+
+</StackPane>

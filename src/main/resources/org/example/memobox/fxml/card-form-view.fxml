@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.memobox.controller.CardFormController"
+      styleClass="view-container" spacing="24" maxWidth="640">
+
+    <stylesheets>
+        <URL value="@../css/styles.css" />
+    </stylesheets>
+    <padding><Insets top="32" right="48" bottom="32" left="48"/></padding>
+
+    <!-- Título -->
+    <Label fx:id="lblTitulo" text="Tarjeta" styleClass="page-title"/>
+
+    <!-- Formulario -->
+    <VBox styleClass="card-panel" spacing="16">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+        <GridPane hgap="16" vgap="14">
+            <columnConstraints>
+                <javafx.scene.layout.ColumnConstraints minWidth="100" halignment="RIGHT" />
+                <javafx.scene.layout.ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <Label text="Pregunta *"    GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
+            <TextField fx:id="txtPregunta" promptText="¿Cuál es la capital de Francia?"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0"
+                       styleClass="form-input" prefWidth="360"/>
+
+            <Label text="Respuesta *"   GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label"/>
+            <TextArea fx:id="txtRespuesta" promptText="París"
+                      GridPane.columnIndex="1" GridPane.rowIndex="1"
+                      styleClass="form-textarea" prefHeight="80" wrapText="true"/>
+
+            <Label text="Ejemplo"       GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label"/>
+            <TextArea fx:id="txtEjemplo" promptText="Ejemplo de uso opcional…"
+                      GridPane.columnIndex="1" GridPane.rowIndex="2"
+                      styleClass="form-textarea" prefHeight="60" wrapText="true"/>
+
+            <Label text="Etiqueta"      GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="form-label"/>
+            <TextField fx:id="txtEtiqueta" promptText="Ej: geografía, vocabulario…"
+                       GridPane.columnIndex="1" GridPane.rowIndex="3"
+                       styleClass="form-input"/>
+        </GridPane>
+
+        <Label fx:id="lblError" text="" styleClass="form-error" visible="false" managed="false" wrapText="true"/>
+    </VBox>
+
+    <HBox spacing="12">
+        <Button fx:id="btnGuardar" text="Guardar" onAction="#onGuardar" styleClass="btn-primary" minWidth="-Infinity"/>
+        <Button text="Cancelar"  onAction="#onCancelar" styleClass="btn-secondary" prefWidth="120"/>
+    </HBox>
+
+</VBox>
